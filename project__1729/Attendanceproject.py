@@ -55,7 +55,7 @@ while True:
         face_dis = fr.face_distance(encode_list_known, encode_face)
         # print(face_dis)
         match_index = np.argmin(face_dis)
-        if matches[match_index]>0.15:
+        if face_dis[match_index]<0.10:
             name=classname[match_index].upper()
             mark_attendance(name)
         else:
